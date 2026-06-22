@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - U-studios</title>
+    <link rel="icon" href="./Icon/icon.png">
+</head>
+<link rel="stylesheet" href="CSS/U-studios-style-clean.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(./Img/background\ image\ 1.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+    background-color: rgba(255,255,255,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+}
+
+.logo {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* NAV LINKS (HAMBURGER STYLE) */
+.nav-links {
+    list-style: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.nav-links.open {
+    max-height: 400px;
+}
+
+.nav-links li {
+    width: 100%;
+}
+
+.nav-links a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #111;
+}
+
+.nav-links a:hover {
+    background: antiquewhite;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #111;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px,-5px);
+}
+
+/* ABOUT CONTENT */
+div {
+    max-width: 700px;
+    margin: 60px auto;
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+</style>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+    <div class="navbar">
+        <a href="./index.html" class="logo">U-studios</a>
+
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./Contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <hr>
+
+    <!-- About Content -->
+    <div>
+        <h1>About U-studios</h1>
+        <p>U-studios is a South African clothing brand based in Durban.</p>
+        <p>We specialize in modern, high-quality fashion designed for comfort and style.</p>
+        <p>Our mission is to provide unique pieces that help you express your individuality.</p>
+        <p>Thank you for supporting local.</p>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <h2>U-studios</h2>
+        <p> 67 Florida Road, Morningside, Durban, 4001</p>
+        <p>Phone: +27 (031) 555-0789</p>
+        <p>Email: @u-studios.com</p>
+        <p>© 2026 U-studios. All rights reserved.</p>
+    </footer>
+
+</body>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+});
+</script>
+
+<script src="javascript/script.js"></script>
+
+</html>

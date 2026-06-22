@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-studios</title>
+    <link rel="icon" href="./Icon/icon.png">
+
+ <link rel="stylesheet" href="CSS/U-studios-style-clean.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', Arial;
+            min-height: 100vh;
+            background-color: #111;
+            background-image:
+                radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+    content: "U  U  U  U  U  U  U  U  U  U  U  U";
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    color: rgba(255,255,255,0.08);
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 60px;
+    line-height: 120px;
+    transform: rotate(-20deg);
+    animation: floatUs 18s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes floatUs {
+    from {
+        transform: translateY(0) rotate(-20deg);
+    }
+
+    to {
+        transform: translateY(-120px) rotate(-20deg);
+    }
+}
+
+        /* NAVBAR */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            height: 60px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .nav-links {
+            list-style: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            flex-direction: column;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .nav-links.open {
+            max-height: 400px;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .nav-links a:hover {
+            background: antiquewhite;
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: #111;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* SLIDESHOW */
+        .slideshow-container {
+            max-width: 900px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .myslides {
+            display: none;
+        }
+
+        .myslides img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 10px;
+            color: white;
+            font-size: 22px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 5px;
+            background: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active,
+        .dot:hover {
+            background: #333;
+        }
+
+        /* VIDEO */
+        video {
+            display: block;
+            margin: 40px auto;
+            max-width: 90%;
+            border-radius: 12px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="navbar">
+            <a href="#" class="logo">U-studios</a>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="./About.html">About</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SLIDES -->
+    <div class="slideshow-container">
+        <div class="myslides">
+            <img src="./Img/image.1.png">
+        </div>
+
+        <div class="myslides">
+            <img src="./Img/image.2.png">
+        </div>
+
+        <div class="myslides">
+            <img src="./Img/image.3.png">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <video controls>
+        <source src="./Img/video2.mp4" type="video/mp4">
+    </video>
+
+    <footer>
+        <div>
+            <h3>U-studios</h3>
+            <p>Your vision, our expertise.</p>
+        </div>
+
+        <div>
+            <h3>Links</h3>
+            <a href="#">Home</a><br>
+            <a href="#">Products</a><br>
+            <a href="#">About</a><br>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        /* HAMBURGER */
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        /* SLIDESHOW */
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("myslides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+<script src="javascript/script.js"></script>
+
+</html>
