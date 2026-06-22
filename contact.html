@@ -239,7 +239,7 @@ footer a:hover {
     <!--Navigation Starts-->
     <nav>
         <div class="navbar">
-            <a href="#" class="logo">U-studios</a>
+            <a href="./index.html" class="logo">U-studios</a>
 
             <!-- Hamburger menu -->
             <div class="hamburger" id="hamburger">
@@ -249,39 +249,32 @@ footer a:hover {
             </div>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#">Home</a></li>
-
-                <li>
-                    <a href="products.html">Products</a>
-                    <ul class="submenu">
-
-                </li>
-
-
-                </li>
-
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Products.html">Products</a></li>
                 <li><a href="./About.html">About</a></li>
-                <li><a href="./Contact.html">Contact</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
     <!--Navigation Ends-->
     <h3>Contact</h3>
 
-    <form>
+    <form action="#" method="POST">
 
         <label for="name">First Name:</label><br>
-        <input type="text" id="name" name="firstname" placeholder="Your first name"><br><br>
+        <input type="text" id="name" name="firstname" placeholder="Your first name" required><br><br>
 
         <label for="surname">Last Name:</label><br>
-        <input type="text" id="surname" name="lastname" placeholder="Your surname"><br><br>
+        <input type="text" id="surname" name="lastname" placeholder="Your surname" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Your email address" required><br><br>
 
         <label for="message">Message:</label><br>
-        <textarea id="message" name="message" placeholder="Write your message here..."></textarea><br><br>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea><br><br>
 
         <input type="submit" value="Send Message">
-
-        <form>
+    </form>
 
 </body>
 
@@ -294,11 +287,11 @@ footer a:hover {
     <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products & Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./Products.html">Products & Services</a></li>
+            <li><a href="./Products.html">Portfolio</a></li>
+            <li><a href="./About.html">About us</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
         </ul>
     </div>
 
